@@ -159,6 +159,7 @@ class TuyaPlatformGeyserwise {
         this.deviceAccessories.set(uuid, deviceAccessory);
         break;
       case 'qn':
+        case 'rs': //Geyserwise MAX
         deviceAccessory = new HeaterAccessory(this, homebridgeAccessory, device);
         this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
         this.deviceAccessories.set(uuid, deviceAccessory);
@@ -184,11 +185,11 @@ class TuyaPlatformGeyserwise {
         this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
         this.deviceAccessories.set(uuid, deviceAccessory);
         break;
-      case 'rs': //Geyserwise MAX
+      /*case 'rs': //Geyserwise MAX
         deviceAccessory = new GeyserAccessory(this, homebridgeAccessory, device);
         this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
         this.deviceAccessories.set(uuid, deviceAccessory);
-        break;
+        break;*/
       default:
         break;
     }
