@@ -12,7 +12,7 @@ const AirPurifierAccessory = require('./lib/air_purifier_accessory');
 const WindowCoveringAccessory = require('./lib/window_covering_accessory');
 const ContactSensorAccessory = require('./lib/contactsensor_accessory');
 const LeakSensorAccessory = require('./lib/leak_sensor_accessory');
-const GeyserAccessory = require('.lib/geyser_accessory'); //Geyserwise Max
+const GeyserAccessory = require('./lib/geyser_accessory'); //Geyserwise Max
 
 const LogUtil = require('./util/logutil');
 const DataUtil = require('./util/datautil');
