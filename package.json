@@ -1,5 +1,5 @@
 {
-  "name": "homebridge-tuya-platform",
+  "name": "homebridge-tuya-platform-Geyserwise",
   "version": "1.5.1",
   "description": "Official Homebridge plugin for Tuya Open API, maintained by the Tuya Developer Team.",
   "main": "index.js",
@@ -12,7 +12,7 @@
   ],
   "author": "Chris",
   "license": "MIT",
-  "homepage": "https://github.com/tuya/tuya-homebridge",
+  "homepage": "https://github.com/K1LL3R234/tuya-homebridge-Geyserwise",
   "engines": {
     "node": ">=0.12.0",
     "homebridge": ">=0.2.0"
@@ -28,5 +28,16 @@
     "string-cipher": "^1.0.8",
     "text-encoding": "^0.7.0",
     "uuid": "^8.3.2"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K1LL3R234/tuya-homebridge-Geyserwise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/K1LL3R234/tuya-homebridge-Geyserwise/issues"
   }
 }
