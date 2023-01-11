@@ -1,5 +1,5 @@
 {
-  "name": "homebridge-tuya-platform-Geyserwise",
+  "name": "homebridge-tuya-platform-geyserwise",
   "version": "1.5.1",
   "description": "Official Homebridge plugin for Tuya Open API, maintained by the Tuya Developer Team.",
   "main": "index.js",

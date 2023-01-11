@@ -24,7 +24,7 @@ module.exports = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   // registerAccessory' three parameters is plugin-name, accessory-name, constructor-name
-  homebridge.registerPlatform('homebridge-tuya-platform', 'TuyaPlatform', TuyaPlatform, true);
+  homebridge.registerPlatform('homebridge-tuya-platform-geyserwise', 'TuyaPlatform', TuyaPlatform, true);
 }
 
 // Accessory constructor
@@ -225,7 +225,7 @@ class TuyaPlatform {
   // Called from device classes
   registerPlatformAccessory(platformAccessory) {
     this.log.log(`Register Platform Accessory ${platformAccessory.displayName}`);
-    this.api.registerPlatformAccessories('homebridge-tuya-platform', 'TuyaPlatform', [platformAccessory]);
+    this.api.registerPlatformAccessories('homebridge-tuya-platform-geyserwise', 'TuyaPlatform', [platformAccessory]);
   }
 
   // Function invoked when homebridge tries to restore cached accessory.
@@ -248,7 +248,7 @@ class TuyaPlatform {
   removeAccessory(accessory) {
     if (accessory) {
       this.log.log(`Remove Accessory ${accessory}`);
-      this.api.unregisterPlatformAccessories("homebridge-tuya-platform", "TuyaPlatform", [accessory]);
+      this.api.unregisterPlatformAccessories("homebridge-tuya-platform-geyserwise", "TuyaPlatform", [accessory]);
       this.accessories.delete(accessory.uuid);
       this.deviceAccessories.delete(accessory.uuid);
     }

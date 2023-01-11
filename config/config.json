@@ -1,6 +1,6 @@
 {
     "bridge": {
-        "name": "homebridge-tuya-platform-Geyserwise",
+        "name": "homebridge-tuya-platform-geyserwise",
         "username": "BE:B9:AC:79:6C:CA",
         "port": 8081,
         "pin": "034-85-687"
