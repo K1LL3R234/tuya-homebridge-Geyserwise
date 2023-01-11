@@ -10,7 +10,7 @@
   "keywords": [
     "homebridge-plugin"
   ],
-  "author": "huhuan",
+  "author": "Chris",
   "license": "MIT",
   "homepage": "https://github.com/tuya/tuya-homebridge",
   "engines": {
