@@ -24,11 +24,11 @@ module.exports = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   // registerAccessory' three parameters is plugin-name, accessory-name, constructor-name
-  homebridge.registerPlatform('homebridge-tuya-platform-geyserwise', 'TuyaPlatform', TuyaPlatform, true);
+  homebridge.registerPlatform('homebridge-tuya-platform-geyserwise', 'TuyaPlatformGeyserwise', TuyaPlatformGeyserwise, true);
 }
 
 // Accessory constructor
-class TuyaPlatform {
+class TuyaPlatformGeyserwise {
   constructor(log, config, api) {
     this.log = new LogUtil(
       config.options.debug,
@@ -48,7 +48,7 @@ class TuyaPlatform {
       // Platform Plugin should only register new accessory that doesn't exist in homebridge after this event.
       // Or start discover new accessories.
       this.api.on('didFinishLaunching', function () {
-        this.log.log("Initializing TuyaPlatform...");
+        this.log.log("Initializing TuyaPlatformGeyserwise...");
         this.initTuyaSDK(config);
       }.bind(this));
     }
@@ -225,7 +225,7 @@ class TuyaPlatform {
   // Called from device classes
   registerPlatformAccessory(platformAccessory) {
     this.log.log(`Register Platform Accessory ${platformAccessory.displayName}`);
-    this.api.registerPlatformAccessories('homebridge-tuya-platform-geyserwise', 'TuyaPlatform', [platformAccessory]);
+    this.api.registerPlatformAccessories('homebridge-tuya-platform-geyserwise', 'TuyaPlatformGeyserwise', [platformAccessory]);
   }
 
   // Function invoked when homebridge tries to restore cached accessory.
@@ -248,7 +248,7 @@ class TuyaPlatform {
   removeAccessory(accessory) {
     if (accessory) {
       this.log.log(`Remove Accessory ${accessory}`);
-      this.api.unregisterPlatformAccessories("homebridge-tuya-platform-geyserwise", "TuyaPlatform", [accessory]);
+      this.api.unregisterPlatformAccessories("homebridge-tuya-platform-geyserwise", "TuyaPlatformGeyserwise", [accessory]);
       this.accessories.delete(accessory.uuid);
       this.deviceAccessories.delete(accessory.uuid);
     }

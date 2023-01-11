@@ -10,8 +10,8 @@
 
     "platforms": [
         {
-            "platform": "TuyaPlatform",
-            "name": "TuyaPlatform",
+            "platform": "TuyaPlatformGeyserwise",
+            "name": "TuyaPlatformGeyserwise",
             "options":
               {
                 "username": "",
