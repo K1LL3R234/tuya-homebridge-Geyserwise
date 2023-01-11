@@ -8,13 +8,14 @@ const SmokeSensorAccessory = require('./lib/smokesensor_accessory');
 const Fanv2Accessory = require('./lib/fanv2_accessory');
 const HeaterAccessory = require('./lib/heater_accessory');
 const GarageDoorAccessory = require('./lib/garagedoor_accessory');
-const AirPurifierAccessory = require('./lib/air_purifier_accessory')
-const WindowCoveringAccessory = require('./lib/window_covering_accessory')
+const AirPurifierAccessory = require('./lib/air_purifier_accessory');
+const WindowCoveringAccessory = require('./lib/window_covering_accessory');
 const ContactSensorAccessory = require('./lib/contactsensor_accessory');
-const LeakSensorAccessory = require('./lib/leak_sensor_accessory')
+const LeakSensorAccessory = require('./lib/leak_sensor_accessory');
+const GeyserAccessory = require('.lib/geyser_accessory'); //Geyserwise Max
 
-const LogUtil = require('./util/logutil')
-const DataUtil = require('./util/datautil')
+const LogUtil = require('./util/logutil');
+const DataUtil = require('./util/datautil');
 
 var Accessory, Service, Characteristic;
 
@@ -180,6 +181,11 @@ class TuyaPlatform {
       case 'rqbj':
       case 'jwbj':
         deviceAccessory = new LeakSensorAccessory(this, homebridgeAccessory, device);
+        this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
+        this.deviceAccessories.set(uuid, deviceAccessory);
+        break;
+      case 'rs': //Geyserwise MAX
+        deviceAccessory = new GeyserAccessory(this, homebridgeAccessory, device);
         this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
         this.deviceAccessories.set(uuid, deviceAccessory);
         break;
