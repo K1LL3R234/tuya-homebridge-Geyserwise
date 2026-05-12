@@ -24,7 +24,7 @@ module.exports = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   // registerAccessory' three parameters is plugin-name, accessory-name, constructor-name
-  homebridge.registerPlatform('homebridge-tuya-platform-geyserwise', 'TuyaPlatformGeyserwise', TuyaPlatformGeyserwise, true);
+  homebridge.registerPlatform('homebridge-tuya-platform-geyserwise', 'TuyaPlatformGeyserwise', TuyaPlatformGeyserwise);
 }
 
 // Accessory constructor
@@ -237,10 +237,8 @@ class TuyaPlatformGeyserwise {
     // Set the accessory to reachable if plugin can currently process the accessory,
     // otherwise set to false and update the reachability later by invoking
     // accessory.updateReachability()
-    accessory.reachable = true;
-    accessory.on('identify', function (paired, callback) {
+    accessory.on('identify', () => {
       // this.log.debug('[IDENTIFY][%s]', accessory.displayName);
-      callback();
     });
     this.accessories.set(accessory.UUID, accessory);
   }
