@@ -1,6 +1,6 @@
 {
   "name": "homebridge-tuya-platform-geyserwise",
-  "version": "1.5.12-beta.0",
+  "version": "1.5.12",
   "description": "Official Homebridge plugin for Tuya Open API, maintained by the Tuya Developer Team.",
   "main": "index.js",
   "scripts": {
